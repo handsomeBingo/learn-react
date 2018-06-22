@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Clock from './clock'
+import Toggle from './toggle'
 import './App.css';
 
 class App extends Component {
@@ -15,6 +16,9 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Clock />
+        <p>
+          <Toggle />
+        </p>
       </div>
     );
   }
