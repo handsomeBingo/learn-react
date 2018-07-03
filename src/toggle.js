@@ -11,7 +11,7 @@ class Toggle extends Component {
     //this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(id, e) {
+  handleClick(id, key, e) {
     this.setState((prevState) => ({
       isToggleOn: !prevState.isToggleOn
     }))
@@ -19,7 +19,7 @@ class Toggle extends Component {
   }
 
   render() {
-    return <button onClick = {this.handleClick.bind(this, 1)}>
+    return <button onClick = {this.handleClick.bind(this, 2, 1)}>
       {this.state.isToggleOn ? 'ON' : 'OFF'}
     </button>
   }
@@ -69,6 +69,7 @@ class logoutButton extends Component {
 // 将参数传递给事件处理程序
 
 // 在循环内部，通常要将一个额外的参数传递给事件处理程序。例如，id是一个内联id，则以下任意一个方式都可以正常工作：
+// 注意，事件对象e将会作为回调函数的最后一个函数来声明，在事件被触发的时候，事件对象会默认注入回调，所以绑定事件时无需显式注入e
 
 class DeleteButton extends Component {
   constructor(props) {
