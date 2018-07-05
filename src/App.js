@@ -4,7 +4,9 @@ import Clock from './clock'
 import Toggle from './toggle'
 import LoginControl from './conditionRender2'
 import Page from './conditionRender3'
+import NumberList from './listAndKyes1'
 import './App.css';
+
 
 class App extends Component {
   render() {
@@ -26,6 +28,11 @@ class App extends Component {
         </div>
         <div>
           <LoginControl />
+        </div>
+        <div>
+          <ul>
+            <NumberList numbers={[1, 2, 3, 4, 5]} />
+          </ul>
         </div>
       </div>
     );
