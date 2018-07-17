@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 
-class NumberList extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    const listItems = this.props.numbers.map((item) => {
-      return <li key={item.toString()}>{item}</li>
-    })
-    return listItems
-  }
-}
-export default NumberList
+//class NumberList extends Component {
+//  constructor(props) {
+//    super(props)
+//  }
+//
+//  render() {
+//    const listItems = this.props.numbers.map((item) => {
+//      return <li key={item.toString()}>{item}</li>
+//    })
+//    return listItems
+//  }
+//}
+//export default NumberList
 
 // 列表渲染
 
@@ -34,5 +34,17 @@ export default NumberList
 // keys只在数组的上下文存在意义。 这句话应该是有循环操作时，如数组的map函数
 // 例如，如果你提取一个listItem组件，应该把key放在数组处理的<ListItem />元素中，不能放在ListItem组件自身的<li />根元素上
 
+class ListItem extends Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return (
+      // 这里的li元素并不需要key，而是应该将其放在引用listItem组件的位置
+      <li>{this.props.value}</li>
+    )
+  }
+}
 
+export default ListItem
 

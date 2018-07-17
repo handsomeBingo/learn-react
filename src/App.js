@@ -4,7 +4,13 @@ import Clock from './clock'
 import Toggle from './toggle'
 import LoginControl from './conditionRender2'
 import Page from './conditionRender3'
-import NumberList from './listAndKyes1'
+import NumberList from './listAndKyes2'
+import NameForm from './form1'
+import EssayForm from './form2'
+import FlavorForm from './form3'
+import Reservation from './form5'
+import Calculator from './stateLifting1'
+import Calculator2 from './stateLifting2'
 import './App.css';
 
 
@@ -33,6 +39,28 @@ class App extends Component {
           <ul>
             <NumberList numbers={[1, 2, 3, 4, 5]} />
           </ul>
+        </div>
+        <div>
+          <NameForm />
+        </div>
+        <hr/>
+        <div>
+          <EssayForm />
+        </div>
+        <div>
+          <FlavorForm />
+        </div>
+        <hr/>
+        <div>
+          <Reservation />
+        </div>
+        <hr/>
+
+        <div>
+          <Calculator />
+        </div>
+        <div>
+          <Calculator2 />
         </div>
       </div>
     );
