@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-// 在react中，textarea会用value属性来替代在原生html中textarea标签的子节点表示输入内容的方式。如此一来textarea非常类似于input
+// this is a test text 在react中，textarea会用value属性来替代在原生html中textarea标签的子节点表示输入内容的方式。如此一来textarea非常类似于input
 class EssayForm extends Component {
   constructor(props) {
     super(props)
