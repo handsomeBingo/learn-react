@@ -11,6 +11,10 @@ import FlavorForm from './form3'
 import Reservation from './form5'
 import Calculator from './stateLifting1'
 import Calculator2 from './stateLifting2'
+import WelcomeDialog from './combinationAndInherits1'
+import Contacts from './Contacts'
+import Chat from './Chat'
+import SplitPane from './combinationAndInhreits2'
 import './App.css';
 
 
@@ -30,14 +34,14 @@ class App extends Component {
           <Toggle />
         </p>
         <div>
-         <Page />
+          <Page />
         </div>
         <div>
           <LoginControl />
         </div>
         <div>
           <ul>
-            <NumberList numbers={[1, 2, 3, 4, 5]} />
+            <NumberList numbers={[1, 2, 3, 4, 5]}/>
           </ul>
         </div>
         <div>
@@ -61,6 +65,13 @@ class App extends Component {
         </div>
         <div>
           <Calculator2 />
+        </div>
+        <div>
+          <WelcomeDialog />
+        </div>
+        <hr/>
+        <div>
+          <SplitPane left={<Contacts />}  right={<Chat />} />
         </div>
       </div>
     );

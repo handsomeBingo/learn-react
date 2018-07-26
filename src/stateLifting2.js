@@ -114,5 +114,38 @@ class Calculator extends Component {
 
 export default Calculator
 
-// 现在有两个输入框，但是当你在其中一个输入时，另一个并不会更新，这显然不符合我们的需要。另外，我们此时也不能从Calculator组件中展示BoilingVerdict的渲染结果。因为现在表示温度的数据状态只存在于TemperatureInput组件中。
+/*
+* 现在，无论编辑哪一个输入框，Calculator组件中，this.state.temperature和this.state.scale都会被更新。其中之一的输入框得到用户原样输入的值，另一个输入框总是显示出计算的出的结果
+*
+* React在DOM原生组件input上调用指定的onChange函数。在本例中，指的是TemperatureInput组件上的handleChange函数。
+*
+* TemperatureInput 组件的handleChange函数会在值发生变化时调用this.props.onTemperatureChange()函数，这些props属性，像onTemperatureChange都是由父组件Calculator提供的。
+*
+* 当最开始渲染时，Calculator组件把内部的handleCelsiusChange方法传给摄氏输入组件TemperatureInput的输入onTemperatureChange方法，并且把handleFahrenheitChange方法指定给华氏输入组件TemperatureInput的onTemperatureChange方法。两个Calculator内部的方法都会在相应输入框被编辑时被调用。
+*
+* 这些方法内部，Calculator组件会让React使用编辑输入的新值和当前输入框的温标来调用this.setState()方法来重新渲染自身。
+*
+* React会调用Calculator组件的render方法来识别（重新计算）UI界面的样子。基于当前温度和温标，两个输入框的值会被重新就算。温度转换就是在这里被执行的。
+*
+* 接着React会使用Calculator指定的新的props来分别调用TemperatureInput组件，React也会识别出子组件的UI界面。
+*
+* React DOM 会更新Dom来匹配对应的值。我们编辑的输入框获取新值，而另一个输入框则更新经过转换的温度值。
+*
+* */
 
+// 经验教训
+
+/*
+* 在React中，对应任何可变数据理应只有一个单一“数据源”。通常，状态都是首先添加在需要渲染的数据的组件中。此时，如果另一个组件也需要这些数据，你可以将数据提升至离它们最近的父组件中。你应该在应用中保持自上而下的数据流，而不是尝试在不同组件中同步状态。
+*
+*
+* 状态提升比双向数据绑定要写更多的模板代码，但带来的好处是，你也可以更快的寻找和定位bug工作。因为哪个组件保有状态数据，也只有它自己能够操作这些数据，发生bug的范围就被大大地减小了。此外，你也可以使用自定义逻辑来拒绝或者更改用户的输入。
+*
+* 如果某些数据可以由props或者state提供，那么它很有可能不应该在state中出现。举个例子，我们仅仅保存最新的编辑过的temperature和scale值，而不是celsiusValue和fahrenheitValue。另一个输入框的值总是可以在render()函数中由这些保存的数据计算出来。这样我们可以根据同一个用户输入精准计算两个需要使用的数据。
+*
+*
+*
+*
+*
+*
+* */
