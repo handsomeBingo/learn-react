@@ -15,8 +15,8 @@ import WelcomeDialog from './combinationAndInherits1'
 import Contacts from './Contacts'
 import Chat from './Chat'
 import SplitPane from './combinationAndInhreits2'
+import SignUpDialog from './combinationAndInherits3'
 import './App.css';
-
 
 class App extends Component {
   render() {
@@ -72,6 +72,9 @@ class App extends Component {
         <hr/>
         <div>
           <SplitPane left={<Contacts />}  right={<Chat />} />
+        </div>
+        <div>
+          <SignUpDialog />
         </div>
       </div>
     );
