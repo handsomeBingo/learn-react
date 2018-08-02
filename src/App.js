@@ -16,6 +16,7 @@ import Contacts from './Contacts'
 import Chat from './Chat'
 import SplitPane from './combinationAndInhreits2'
 import SignUpDialog from './combinationAndInherits3'
+import ButtonWithTheme from './context2'
 import './App.css';
 
 class App extends Component {
@@ -75,6 +76,9 @@ class App extends Component {
         </div>
         <div>
           <SignUpDialog />
+        </div>
+        <div>
+          <ButtonWithTheme theme="heieheei" />
         </div>
       </div>
     );
