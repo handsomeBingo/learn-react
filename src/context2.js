@@ -57,4 +57,6 @@ class ThemeButton extends Component {
   }
 }
 
+// 注意：
+// 不要只是为了避免在几个层级下的组件传递props而使用context。坚持需要在多个层次的许多组件中访问相同数据的情况下使用context。
 export default ButtonWithTheme
