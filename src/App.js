@@ -17,6 +17,8 @@ import Chat from './Chat'
 import SplitPane from './combinationAndInhreits2'
 import SignUpDialog from './combinationAndInherits3'
 import ButtonWithTheme from './context2'
+import ContextApp from './context-app'
+import ContextApp2 from './context-app2'
 import './App.css';
 
 class App extends Component {
@@ -79,6 +81,13 @@ class App extends Component {
         </div>
         <div>
           <ButtonWithTheme theme="heieheei" />
+        </div>
+        <div>
+          <ContextApp />
+        </div>
+        <hr/>
+        <div>
+          <ContextApp2 />
         </div>
       </div>
     );
