@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+ import React, {Component} from 'react'
 
 import {ThemeContext, themes} from './theme-context2'
 import ThemeToggleButton from './theme-toggle-button'
@@ -19,14 +19,12 @@ class ContextApp2 extends Component {
 
     // 声明state时，state要包括向下传递给context的provider的更新方法
     this.toggleTheme = () => {
-      this.setState(state => {
-        console.log(state === themes.dark)
-        return {
-          state: state.theme === themes.dark
+      this.setState(state => ({
+        theme: state.theme === themes.dark
             ? themes.light
             : themes.dark
-        }
-      })
+        })
+      )
     }
     this.state = {
       theme: themes.light,

@@ -11,7 +11,7 @@ export const themes = {
   }
 };
 
-// 确保我们传递给createContext()方法的默认值的形式是consumer需要的
+// 确保我们传递给createContext()方法的默认值的数据结构是consumer需要的数据结构保持一致
 export const ThemeContext = React.createContext({
   theme: themes.dark,
   toggleTheme: () => {}
