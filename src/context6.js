@@ -29,7 +29,7 @@ class Button extends Component {
 }
 
 /* 应用 */
-// 就是说以后如果想在生命周期的钩子里使用这些context的值，组件就要在导出的时候包装一层函数？这和引用的时候调用Consumer有啥区别呢？难道以后引用这个玩意儿要这么写？其实这是个误解，下面那个 export
+// 就是说以后如果想在生命周期的钩子里使用这些context的值，组件就要在导出的时候包装一层函数？这和引用的时候调用Consumer有啥区别呢？难道以后引用这个玩意儿要这么写？其实这是个误解，下面那个 export default props => 是这个组件的一种引用方式吧，重点是 ...props 这样就可以在生命周期中使用this.props.xxx 和 this.props.theme 属性，在
 /*import Button from 'button'
 
 class SthApp extends Component {
